@@ -6,7 +6,7 @@ const fs = require("fs");
 const write2file = (data) => {
   let list = JSON.stringify(data);
 
-  let file = path.join(__dirname, "newList.json");
+  let file = path.join(__dirname, "urban.json");
 
   fs.writeFile(file, list, (err) => {
     if (err) {
