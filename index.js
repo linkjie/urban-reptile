@@ -81,7 +81,7 @@ const write2file = (data) => {
   //   ).flat()
   // );
   await Promise.all(
-    new Array(20 - 1).fill(0).map((i, index) => {
+    new Array(totalPage - 1).fill(0).map((i, index) => {
       return request(index + 2);
     })
   );
