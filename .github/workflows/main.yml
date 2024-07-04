@@ -18,8 +18,8 @@ jobs:
       - run: |
           git config user.email "linkangjie9726@163.com"
           git config user.name "linkangjie"
-          git add urban.json
-          git commit -m "generated"
+          git add .
+          git commit -m "generated"
           git push
       # - name: Commit & Push changes
       #   uses: actions-js/push@master
