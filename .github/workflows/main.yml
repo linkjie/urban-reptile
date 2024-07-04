@@ -18,7 +18,7 @@ jobs:
       - run: |
           git config user.email "linkangjie9726@163.com"
           git config user.name "linkangjie"
-          git add . 
+          git add .
           git commit -m "commit"
           git push
       # - name: Commit & Push changes
