@@ -20,11 +20,11 @@ const write2file = (data) => {
 (async () => {
   //http
   const https = axios.create({
-    proxy: {
-      protocol: "http",
-      host: "127.0.0.1",
-      port: 7890,
-    },
+    // proxy: {
+    //   protocol: "http",
+    //   host: "127.0.0.1",
+    //   port: 7890,
+    // },
   });
 
   const html = await https
