@@ -4,7 +4,7 @@ const path = require("path");
 const fs = require("fs");
 
 const write2file = (data) => {
-  let list = JSON.stringify(data);
+  let list = JSON.stringify(data, null, 4);
 
   let file = path.join(__dirname, "urban.json");
 
@@ -20,11 +20,11 @@ const write2file = (data) => {
 (async () => {
   //http
   const https = axios.create({
-    // proxy: {
-    //   protocol: "http",
-    //   host: "127.0.0.1",
-    //   port: 7890,
-    // },
+    proxy: {
+      protocol: "http",
+      host: "127.0.0.1",
+      port: 7890,
+    },
   });
 
   const html = await https
@@ -60,7 +60,7 @@ const write2file = (data) => {
             // console.log(word);
             data.push({ word, mean, example });
           });
-          console.log("爬取成功", page, "页");
+          // console.log("爬取成功", page, "页");
           // return data;
           resolve(data);
         })
@@ -80,9 +80,8 @@ const write2file = (data) => {
   //     )
   //   ).flat()
   // );
-
   await Promise.all(
-    new Array(totalPage - 1).fill(0).map((i, index) => {
+    new Array(20 - 1).fill(0).map((i, index) => {
       return request(index + 2);
     })
   );
